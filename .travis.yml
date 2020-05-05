@@ -2,8 +2,6 @@ notifications:
   email: false
 
 language: cpp
-
-sudo: required
 dist: trusty
 
 addons:
@@ -16,9 +14,9 @@ env:
   global:
     - CTEST_EXT_COLOR_OUTPUT=TRUE
     - CTEST_BUILD_FLAGS=-j4
-    - CTEST_WITH_SUBMIT=TRUE
+    - CTEST_WITH_SUBMIT=FALSE
 
-matrix:
+jobs:
   include:
     - os: linux
       compiler: gcc
@@ -29,9 +27,9 @@ matrix:
     - os: linux
       compiler: gcc
       env: CTEST_TARGET_SYSTEM=Linux-gcc    CTEST_MODEL=CodeCheck
-    - os: osx
-      compiler: clang
-      env: CTEST_TARGET_SYSTEM=MacOS-clang  CTEST_MODEL=Experimental
+    # - os: osx
+    #   compiler: clang
+    #   env: CTEST_TARGET_SYSTEM=MacOS-clang  CTEST_MODEL=Experimental
 
 install:
   - if [ "${CTEST_MODEL}" == "Coverage" ]; then
@@ -43,7 +41,7 @@ script:
   - ctest -VV -S devtools_test.cmake
 
 after_success:
-  # Push coverage info on codecov.io
+  # Push coverage info to codecov.io
   - if [ "${CTEST_MODEL}" == "Coverage" ]; then
         $HOME/codecov -p dashboard/build;
     fi
