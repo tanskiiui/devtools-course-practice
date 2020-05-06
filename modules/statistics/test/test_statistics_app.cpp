@@ -15,7 +15,7 @@ using std::vector;
 using std::string;
 
 class Statistics_app_test : public ::testing::Test {
-protected:
+ protected:
   void Act(vector<string> args_) {
     vector<const char*> options;
 
@@ -34,7 +34,7 @@ protected:
     EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
   }
 
-private:
+ private:
   Statistics_app app_;
   string output_;
 };
