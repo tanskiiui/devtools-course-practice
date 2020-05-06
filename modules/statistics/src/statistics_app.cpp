@@ -26,7 +26,10 @@ void Statistics_app::help(const char* appname, const char* message) {
 
     "Where all values are integer numbers, " +
     "all probabilities are double-presision numbers, " +
-    "and <operation> is either number or one of 'm' and 'd'\n";
+    "and <operation> is either number or one of 'm' and 'd':\n" +
+    " - enter number as operation to calculate <number> order moment\n" +
+    " - enter 'm' to calculate expected value of random variable\n" +
+    " - enter 'd' to calculate dispersion of random variable\n\n";
 }
 
 bool Statistics_app::validateNumberOfArguments(int argc, const char** argv) {
