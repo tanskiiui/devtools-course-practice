@@ -55,7 +55,7 @@ double parseDouble(const char* arg) {
 double parseInt(const char* arg) {
   int value;
   value = std::atoi(arg);
-  if(std::to_string(value) != std::string(arg))
+  if (std::to_string(value) != std::string(arg))
     throw std::string("Wrong value format!");
   return value;
 }
