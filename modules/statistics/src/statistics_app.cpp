@@ -118,7 +118,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
       stream << "Expected value is " << d.expectedValue();
     else if (args.operation == "d")
       stream << d.dispersion();
-    else 
+    else
       stream << "Dispersion is "
       << d.moment(stoi(args.operation), d.expectedValue());
     message_ = stream.str();
