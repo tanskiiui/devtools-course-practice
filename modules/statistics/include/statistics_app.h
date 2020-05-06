@@ -18,7 +18,7 @@ class Statistics_app {
   typedef struct {
     std::vector<int> value;
     std::vector<double> probability;
-    char* operation;
+    std::string operation;
   } Arguments;
 };
 

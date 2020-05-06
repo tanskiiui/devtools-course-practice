@@ -52,10 +52,9 @@ double parseDouble(const char* arg) {
 }
 
 double parseInt(const char* arg) {
-  std::string arg1(arg);
   int value;
   try {
-    value = stoi(arg1, nullptr);
+    value = std::atoi(arg);
   }
   catch(std::string) {
     throw std::string("Wrong value format!");
@@ -63,8 +62,8 @@ double parseInt(const char* arg) {
   return value;
 }
 
-char* parseOperation(const char* arg) {
-  char* op;
+std::string parseOperation(const char* arg) {
+  std::string op;
   if (strcmp(arg, "m") == 0) {
     op = "m";
   } else if (strcmp(arg, "d") == 0) {
@@ -72,7 +71,7 @@ char* parseOperation(const char* arg) {
   } else {
     try {
       std::string arg1(arg);
-      op = itoa(stoi(arg1, nullptr), op, 10);
+      op = std::to_string(std::stoi(arg1, nullptr));
     }
     catch (std::string) {
       throw std::string("Wrong operation format!");
@@ -118,7 +117,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
       stream << d.expectedValue();
     else if (args.operation == "d")
       stream << d.dispersion();
-    else stream << d.moment(atoi(args.operation), d.expectedValue());
+    else stream << d.moment(stoi(args.operation), d.expectedValue());
     message_ = stream.str();
   }
   catch (std::string str) {
