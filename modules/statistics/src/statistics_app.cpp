@@ -94,7 +94,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
     }
     args.operation = parseOperation(argv[argc - 1]);
   }
-  catch (std::string str) {
+  catch (std::string &str) {
     return str;
   }
 
@@ -104,7 +104,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
       S.insert(std::pair<int, double>(args.value[i], args.probability[i]));
     }
   }
-  catch (std::string str) {
+  catch (std::string &str) {
     return std::string("Values shoild be unique");
   }
 
@@ -123,7 +123,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
       << d.moment(stoi(args.operation), d.expectedValue());
     message_ = stream.str();
   }
-  catch (std::string str) {
+  catch (std::string &str) {
     return str;
   }
   return message_;
