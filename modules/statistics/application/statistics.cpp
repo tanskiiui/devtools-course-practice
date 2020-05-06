@@ -8,5 +8,8 @@
 #include "include/statistics_app.h"
 
 int main(int argc, const char** argv) {
-    std::cout << "Hello, world!" << std::endl;
+  Statistics_app app;
+  std::string output = app(argc, argv);
+  printf("%s\n", output.c_str());
+  return 0;
 }
