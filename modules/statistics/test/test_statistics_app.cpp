@@ -63,12 +63,20 @@ TEST_F(Statistics_app_test, Is_Checking_Number_Of_Arguments_odd) {
   Assert("ERROR: Number of arguments should be odd\\..*");
 }
 
-TEST_F(Statistics_app_test, Can_Detect_Wrong_Argument_Format) {
+TEST_F(Statistics_app_test, Can_Detect_Wrong_Probability_Format) {
   vector<string> args = { "2", ",", "4", "1" , "m"};
 
   Act(args);
 
   Assert("Wrong probability format!");
+}
+
+TEST_F(Statistics_app_test, Can_Detect_Wrong_Value_Format) {
+  vector<string> args = { "pi", "0", "4", "1" , "m" };
+
+  Act(args);
+
+  Assert("Wrong value format!");
 }
 
 TEST_F(Statistics_app_test, Can_Detect_Wrong_Operation_Format) {
@@ -95,10 +103,26 @@ TEST_F(Statistics_app_test, Can_Detect_Negative_Probabilities) {
   Assert("The probability must be positive");
 }
 
-TEST_F(Statistics_app_test, Can_Process_Correct_Arguments) {
+TEST_F(Statistics_app_test, Can_Process_Correct_Arguments_m) {
   vector<string> args = { "1", "0.2", "2", "0.8" , "m" };
 
   Act(args);
 
   Assert("Expected value is 1.8");
+}
+
+TEST_F(Statistics_app_test, Can_Process_Correct_Arguments_d) {
+  vector<string> args = { "1", "0.2", "2", "0.8" , "d" };
+
+  Act(args);
+
+  Assert("Dispersion is 0.16");
+}
+
+TEST_F(Statistics_app_test, Can_Process_Correct_Arguments_num) {
+  vector<string> args = { "1", "0.2", "2", "0.8" , "3" };
+
+  Act(args);
+
+  Assert("3 order moment is -0.096");
 }

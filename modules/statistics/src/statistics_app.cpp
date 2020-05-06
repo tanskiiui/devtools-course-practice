@@ -54,12 +54,9 @@ double parseDouble(const char* arg) {
 
 double parseInt(const char* arg) {
   int value;
-  try {
-    value = std::atoi(arg);
-  }
-  catch(std::string) {
+  value = std::atoi(arg);
+  if(std::to_string(value) != std::string(arg))
     throw std::string("Wrong value format!");
-  }
   return value;
 }
 
@@ -99,17 +96,13 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
   }
 
   std::map<int, double> S;
+
+  Distribution d;
   try {
     for (int i = 0; i < static_cast<int>(args.value.size()); i++) {
       S.insert(std::pair<int, double>(args.value[i], args.probability[i]));
     }
-  }
-  catch (std::string &str) {
-    return std::string("Values shoild be unique");
-  }
 
-  Distribution d;
-  try {
     Distribution d(S);
 
     std::ostringstream stream;
@@ -117,9 +110,9 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
     if (args.operation == "m")
       stream << "Expected value is " << d.expectedValue();
     else if (args.operation == "d")
-      stream << d.dispersion();
+      stream << "Dispersion is " << d.dispersion();
     else
-      stream << "Dispersion is "
+      stream << args.operation << " order moment is "
       << d.moment(stoi(args.operation), d.expectedValue());
     message_ = stream.str();
   }
