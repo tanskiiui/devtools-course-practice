@@ -54,3 +54,51 @@ TEST_F(Statistics_app_test, Is_Checking_Number_Of_Arguments) {
 
   Assert("ERROR: Should be more than 2 arguments\\..*");
 }
+
+TEST_F(Statistics_app_test, Is_Checking_Number_Of_Arguments_odd) {
+  vector<string> args = { "1", "2", "4", "3" };
+
+  Act(args);
+
+  Assert("ERROR: Number of arguments should be odd\\..*");
+}
+
+TEST_F(Statistics_app_test, Can_Detect_Wrong_Argument_Format) {
+  vector<string> args = { "2", ",", "4", "1" , "m"};
+
+  Act(args);
+
+  Assert("Wrong probability format!");
+}
+
+TEST_F(Statistics_app_test, Can_Detect_Wrong_Operation_Format) {
+  vector<string> args = { "2", "0", "4", "1" , "k" };
+
+  Act(args);
+
+  Assert("Wrong operation format!");
+}
+
+TEST_F(Statistics_app_test, Can_Detect_Wrong_Probabilities_sum) {
+  vector<string> args = { "2", "1", "4", "1" , "m" };
+
+  Act(args);
+
+  Assert("The sum of the probabilities must be equal Unit");
+}
+
+TEST_F(Statistics_app_test, Can_Detect_Negative_Probabilities) {
+  vector<string> args = { "2", "-1", "4", "1" , "m" };
+
+  Act(args);
+
+  Assert("The probability must be positive");
+}
+
+TEST_F(Statistics_app_test, Can_Process_Correct_Arguments) {
+  vector<string> args = { "1", "0.2", "2", "0.8" , "m" };
+
+  Act(args);
+
+  Assert("Expected value is 1.8");
+}

@@ -36,7 +36,7 @@ bool Statistics_app::validateNumberOfArguments(int argc, const char** argv) {
     help(argv[0], "ERROR: Should be more than 2 arguments.\n\n");
     return false;
   } else if (argc % 2 == 1) {
-    help(argv[0], "Number of arguments should be odd.\n\n");
+    help(argv[0], "ERROR: Number of arguments should be odd.\n\n");
     return false;
   }
   return true;
@@ -73,7 +73,7 @@ std::string parseOperation(const char* arg) {
       std::string arg1(arg);
       op = std::to_string(std::stoi(arg1, nullptr));
     }
-    catch (std::string) {
+    catch (...) {
       throw std::string("Wrong operation format!");
     }
   }
@@ -114,10 +114,10 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
     std::ostringstream stream;
 
     if (args.operation == "m")
-      stream << d.expectedValue();
+      stream << "Expected value is " << d.expectedValue();
     else if (args.operation == "d")
       stream << d.dispersion();
-    else stream << d.moment(stoi(args.operation), d.expectedValue());
+    else stream << "Dispersion is " << d.moment(stoi(args.operation), d.expectedValue());
     message_ = stream.str();
   }
   catch (std::string str) {
