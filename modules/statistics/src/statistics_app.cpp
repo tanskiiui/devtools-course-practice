@@ -99,7 +99,7 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
 
   std::map<int, double> S;
   try {
-    for (int i = 0; i < args.value.size(); i++) {
+    for (int i = 0; i < static_cast<int>(args.value.size()); i++) {
       S.insert(std::pair<int, double>(args.value[i], args.probability[i]));
     }
   }
