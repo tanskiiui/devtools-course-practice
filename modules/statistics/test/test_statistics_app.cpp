@@ -144,7 +144,7 @@ TEST_F(Statistics_app_test, Can_Process_Correct_Arguments_d) {
 
   // Act
   Act(args);
-  
+
   // Assert
   Assert("Dispersion is 0.16");
 }
