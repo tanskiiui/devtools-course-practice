@@ -94,7 +94,7 @@ void SortArray::changeElement(const size_t index, const int32_t element) {
     if (place == index) {
         data[index] = element;
         return;
-    } else if (place > index ) {
+    } else if (place > index) {
         for (size_t i = index; i < place; ++i)
             data[i] = data[i + 1];
         data[place] = element;
