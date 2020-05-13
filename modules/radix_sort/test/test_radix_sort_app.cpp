@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-#include "..\include\radix_sort_app.h"
+#include "../include/radix_sort_app.h"
 
 using ::testing::internal::RE;
 
