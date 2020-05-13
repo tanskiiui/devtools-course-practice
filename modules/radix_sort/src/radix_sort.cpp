@@ -3,6 +3,7 @@
 #include <time.h>
 #include <vector>
 #include <random>
+#include <algorithm>
 #include "../include/radix_sort.h"
 
 void FillRandom(std::vector<std::int32_t>* vector_ptr) {

@@ -1,7 +1,7 @@
 // Copyright 2020 Guschin Alexander & Antipin Alexander
 
 #include <gtest/gtest.h>
-
+#include <algorithm>
 #include <vector>
 #include "../include/radix_sort.h"
 
