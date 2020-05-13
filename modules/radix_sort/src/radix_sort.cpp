@@ -7,7 +7,7 @@
 #include "../include/radix_sort.h"
 
 void FillRandom(std::vector<std::int32_t>* vector_ptr) {
-  std::mt19937 gen(time(0));
+  std::mt19937 gen(static_cast<uint32_t>(time(0)));
   std::size_t size = vector_ptr->size();
   for (std::size_t i = 0; i < size; ++i) {
     std::int32_t tmp = static_cast<std::int32_t>(gen() % 1000);

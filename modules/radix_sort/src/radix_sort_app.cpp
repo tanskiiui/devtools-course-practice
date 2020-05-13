@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 #include <cstring>
+#include <cctype>
 #include "../include/radix_sort_app.h"
 
 int parseNumbers(const char* number) {
