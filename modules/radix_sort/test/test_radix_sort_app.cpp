@@ -10,7 +10,6 @@ using ::testing::internal::RE;
 
 class SortVectorAppTest : public ::testing::Test {
  protected:
-
     void Act(std::vector<std::string> args_) {
         std::vector<const char*> options;
 
