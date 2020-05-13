@@ -336,6 +336,18 @@ TEST(SortArrayTEST, Can_Search_Element_In_SortArray_Correct_2) {
     EXPECT_EQ(res1, res2);
 }
 
+TEST(SortArrayTEST, Can_Search_Element_In_SortArray_Correct_3) {
+    // Arrange
+    SortArray a({ 3, 10, 2, 12, -3, -5, 1 });
+    int32_t res1 = -1, elem = 16, res2;
+
+    // Act
+    res2 = a.search(elem);
+
+    // Assert
+    EXPECT_EQ(res1, res2);
+}
+
 TEST(SortArrayTEST, Can_Return_False_If_SortArray_Not_Empty) {
     // Arrange
     SortArray a({ 3, 10, 2, 12, -3, -5, 1 });
