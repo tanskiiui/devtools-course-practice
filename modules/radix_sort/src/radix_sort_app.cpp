@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+#include <cstring>
 #include "../include/radix_sort_app.h"
 
 int parseNumbers(const char* number) {
