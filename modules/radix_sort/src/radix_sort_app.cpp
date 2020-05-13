@@ -6,10 +6,10 @@
 #include "../include/radix_sort_app.h"
 
 int parseNumbers(const char* number) {
-    size_t size = std::strlen(number);
+    size_t size = strlen(number);
 
-    if (number[0] == '-' && size == 1 ||
-        !std::isdigit(number[0]) && number[0] != '-')
+    if ((number[0] == '-' && size == 1) ||
+        (!std::isdigit(number[0]) && number[0] != '-'))
         throw std::invalid_argument("Wrong character in numbers");
     for (size_t i = 1; i < size; ++i)
         if (!std::isdigit(number[i]))
@@ -25,7 +25,7 @@ std::string SortVectorApp::operator()(int argc, const char** argv) {
 
     std::vector<int32_t> unsort(argc - 1);
     try {
-        for (size_t i = 0; i < argc - 1; ++i)
+        for (int i = 0; i < argc - 1; ++i)
             unsort[i] = parseNumbers(argv[i + 1]);
     }
     catch (std::exception& error) {
@@ -35,7 +35,7 @@ std::string SortVectorApp::operator()(int argc, const char** argv) {
     _array(&unsort);
 
     std::string result;
-    for (size_t i = 0; i < argc - 1; ++i)
+    for (int i = 0; i < argc - 1; ++i)
         result += std::to_string(unsort[i]) + ' ';
     return result;
 }
