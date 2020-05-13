@@ -12,10 +12,9 @@ void RadixSort(std::vector<std::int32_t>* vector);
 class SortArray {
  public:
     SortArray() = default;
-    SortArray(const size_t size);
+    explicit SortArray(const size_t size);
     SortArray(const SortArray& copy) = default;
-    SortArray(SortArray&& copy) noexcept;
-    SortArray(const std::vector<int32_t>& vec);
+    explicit SortArray(const std::vector<int32_t>& vec);
     ~SortArray() = default;
     int32_t operator[](const size_t n);
     size_t size();

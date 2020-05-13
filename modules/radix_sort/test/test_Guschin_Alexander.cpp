@@ -3,7 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <vector>
-#include "include/radix_sort.h"
+#include "../include/radix_sort.h"
 
 TEST(RadixSortTest, Can_Fill_Array) {
   // Arrange
@@ -140,35 +140,6 @@ TEST(SortArrayTEST, Can_Create_Copy_Of_SortArray_Correct_2) {
     // Arrange
     SortArray array(5);
     SortArray copy(array);
-    int32_t res = 0;
-
-    // Assert
-    EXPECT_EQ(res, copy[0]);
-    EXPECT_EQ(res, copy[2]);
-}
-
-TEST(SortArrayTEST, Can_Create_Move_Copy_Of_SortArray_Without_Throws) {
-    // Arrange
-    SortArray a(5);
-
-    // Assert
-    ASSERT_NO_THROW(SortArray(std::move(a)));
-}
-
-TEST(SortArrayTEST, Can_Create_Move_Copy_Of_SortArray_Correct_1) {
-    // Arrange
-    SortArray array(5);
-    SortArray copy(std::move(array));
-    size_t res = 5;
-
-    // Assert
-    EXPECT_EQ(res, copy.size());
-}
-
-TEST(SortArrayTEST, Can_Create_Move_Copy_Of_SortArray_Correct_2) {
-    // Arrange
-    SortArray array(5);
-    SortArray copy(std::move(array));
     int32_t res = 0;
 
     // Assert

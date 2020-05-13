@@ -3,7 +3,7 @@
 #include <time.h>
 #include <vector>
 #include <random>
-#include "include/radix_sort.h"
+#include "../include/radix_sort.h"
 
 void FillRandom(std::vector<std::int32_t>* vector_ptr) {
   std::mt19937 gen(time(0));
@@ -70,8 +70,6 @@ void RadixSort(std::vector<std::int32_t>* vector) {
 
 
 SortArray::SortArray(const size_t size) : data(size) {}
-
-SortArray::SortArray(SortArray&& copy) noexcept : data(std::move(copy.data)) {}
 
 SortArray::SortArray(const std::vector<int32_t>& vec) : data(vec) {
     RadixSort(&data);

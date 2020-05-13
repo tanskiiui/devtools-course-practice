@@ -2,8 +2,8 @@
 
 #include <vector>
 #include <string>
-#include "..\include\radix_sort.h"
-#include "..\include\radix_sort_app.h"
+#include "../include/radix_sort.h"
+#include "../include/radix_sort_app.h"
 
 int parseNumbers(const char* number) {
     size_t size = std::strlen(number);
