@@ -2,9 +2,9 @@
 
 #include "include/complex_number_calculator.h"
 
-#include <string>
 #include <stdlib.h>
 #include <string.h>
+#include <string>
 #include <sstream>
 
 ComplexCalculator::ComplexCalculator() : message_("") {}
@@ -61,7 +61,7 @@ char parseOperation(const char* arg) {
 }
 
 std::string ComplexCalculator::operator()(int argc, const char** argv) {
-    if (!validateNumberOfArguments(argc, argv)){
+    if (!validateNumberOfArguments(argc, argv)) {
         return message_;
     }
 
@@ -76,8 +76,7 @@ std::string ComplexCalculator::operator()(int argc, const char** argv) {
         return str;
     }
 
-    switch (operation)
-    {
+    switch (operation) {
     case '+':
         res = n1 + n2;
         break;
