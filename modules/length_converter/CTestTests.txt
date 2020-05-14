@@ -80,7 +80,7 @@ set_tests_properties (${prefix}_santimeter_to_meter PROPERTIES
 
 add_test(
     NAME ${prefix}_meter_to_santimeter
-    COMMAND ${APPLICATION} 5.0 santimeter 0
+    COMMAND ${APPLICATION} 5.0 santimeter 1
 )
 
 set_tests_properties (${prefix}_meter_to_santimeter PROPERTIES
