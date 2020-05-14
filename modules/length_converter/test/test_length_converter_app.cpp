@@ -15,7 +15,7 @@ using std::vector;
 using std::string;
 
 class LengthCalculatorTest : public ::testing::Test {
-protected:
+ protected:
     void Act(vector<string> args_) {
         vector<const char*> options;
 
@@ -34,7 +34,7 @@ protected:
         EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
     }
 
-private:
+ private:
     LengthCalculator app_;
     string output_;
 };
@@ -110,20 +110,3 @@ TEST_F(LengthCalculatorTest, meter_to_santimeter) {
     // Assert
     Assert("Santimeter-meter converter: 0.05");
 }
-//TEST_F(TemperatureCalculatorTest, Celsius_To_Newton) {
-//    // Arrange
-//    vector<string> args = { "100.0", "CelsiusToNewton" };
-//    // Act
-//    Act(args);
-//    // Assert
-//    Assert("Newton: 33");
-//}
-//
-//TEST_F(TemperatureCalculatorTest, Newton_To_Celsius) {
-//    // Arrange
-//    vector<string> args = { "33.0", "NewtonToCelsius" };
-//    // Act
-//    Act(args);
-//    // Assert
-//    Assert("Celsius: 100");
-//}
