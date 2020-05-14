@@ -51,3 +51,30 @@ add_test(
 set_tests_properties (${prefix}_Kilometer_to_metr PROPERTIES
     PASS_REGULAR_EXPRESSION "Kilometer-metr converter: 0"
     LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_Metr_to_Kilometer
+    COMMAND ${APPLICATION} 5.0 kilometer 0
+)
+
+set_tests_properties (${prefix}_Metr_to_Kilometer PROPERTIES
+    PASS_REGULAR_EXPRESSION "Kilometer-metr converter: 0.005"
+    LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_santimeter_to_meter
+    COMMAND ${APPLICATION} 5.0 santimeter 0
+)
+
+set_tests_properties (${prefix}_santimeter_to_meter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 500"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_meter_to_santimeter
+    COMMAND ${APPLICATION} 5.0 santimeter 0
+)
+
+set_tests_properties (${prefix}_meter_to_santimeter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 0.05"
+    LABELS "${MODULE}")
