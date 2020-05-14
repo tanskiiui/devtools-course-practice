@@ -21,12 +21,12 @@ void LengthCalculator::Help(const char* appname, const char* message) {
 
         "<value> have to be a double-precision number\n\n" +
         "<operation> is one of the following\n\n" +
-        "'kilometer' - kilometr-metr,\n" +
-        "'santimeter' - santimetr-metr,\n" +
-        "'mile'- mile-metr,\n" +
-        "'yard' - yard-metr,\n" +
-        "'ft' - ft-metr\n" +
-        "'inch'- inch-metr\n\n" +
+        "'kilometer' - kilometer-meter,\n" +
+        "'santimeter' - santimeter-meter,\n" +
+        "'mile'- mile-meter,\n" +
+        "'yard' - yard-meter,\n" +
+        "'ft' - ft-meter\n" +
+        "'inch'- inch-meter\n\n" +
         "and <side> is which way to translate \n" +
         "Where 1 is the forward path and 0 is the reverse\n\n" +
         "**************************\n";
@@ -69,8 +69,8 @@ double parseSide(const char* arg) {
 
 std::string parseOperation(const char* arg) {
     std::string op;
-    if (strcmp(arg, "kilometr") == 0) {
-        op = "kilometr";
+    if (strcmp(arg, "kilometer") == 0) {
+        op = "kilometer";
     } else if (strcmp(arg, "santimeter") == 0) {
         op = "santimeter";
     } else if (strcmp(arg, "mile") == 0) {
@@ -105,22 +105,22 @@ std::string LengthCalculator::operator()(int argc, const char** argv) {
     std::ostringstream stream;
 
     if (args.operation == "inch") {
-        stream << "Inch-metr converter: " <<
+        stream << "Inch-meter converter: " <<
             LengthConverter::m_inch(args.value, args.side);
     } else if (args.operation == "ft") {
-        stream << "Ft-metr converter: " <<
+        stream << "Ft-meter converter: " <<
             LengthConverter::m_ft(args.value, args.side);
-    } else if (args.operation == "kilometr") {
-        stream << "Kilometr-metr converter: " <<
+    } else if (args.operation == "kilometer") {
+        stream << "Kilometer-meter converter: " <<
             LengthConverter::m_kmeter(args.value, args.side);
-    } else if (args.operation == "santimetr") {
-        stream << "Santimetr-metr converter: " <<
+    } else if (args.operation == "santimeter") {
+        stream << "Santimeter-meter converter: " <<
             LengthConverter::m_smeter(args.value, args.side);
     } else if (args.operation == "mile") {
-        stream << "Mile-metr converter: " <<
+        stream << "Mile-meter converter: " <<
             LengthConverter::m_mile(args.value, args.side);
     } else if (args.operation == "yard") {
-        stream << "Yard-metr converter: " <<
+        stream << "Yard-meter converter: " <<
             LengthConverter::m_yard(args.value, args.side);
     }
     message_ = stream.str();
