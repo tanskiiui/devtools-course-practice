@@ -75,7 +75,7 @@ TEST_F(LengthCalculatorTest, Can_Detect_Wrong_Operation_Format) {
     Assert("Wrong operation format!");
 }
 
-TEST_F(LengthCalculatorTest, Kilometr_to_metr) {
+TEST_F(LengthCalculatorTest, Kilometer_to_meter) {
     // Arrange
     vector<string> args = { "0.0", "kilometer", "0" };
     // Act
@@ -84,7 +84,7 @@ TEST_F(LengthCalculatorTest, Kilometr_to_metr) {
     Assert("Kilometer-meter converter: 0");
 }
 
-TEST_F(LengthCalculatorTest, Metr_to_Kilometer) {
+TEST_F(LengthCalculatorTest, Meter_to_Kilometer) {
     // Arrange
     vector<string> args = { "5.0", "kilometer", "0" };
     // Act
