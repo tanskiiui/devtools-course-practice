@@ -61,6 +61,8 @@ set_tests_properties (${prefix}_Metr_to_Kilometer PROPERTIES
     PASS_REGULAR_EXPRESSION "Kilometer-metr converter: 0.005"
     LABELS "${MODULE}")
 	
+#######################################
+
 add_test(
     NAME ${prefix}_santimeter_to_meter
     COMMAND ${APPLICATION} 5.0 santimeter 0
@@ -69,6 +71,8 @@ add_test(
 set_tests_properties (${prefix}_santimeter_to_meter PROPERTIES
     PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 500"
     LABELS "${MODULE}")
+	
+#######################################
 
 add_test(
     NAME ${prefix}_meter_to_santimeter
