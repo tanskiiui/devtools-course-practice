@@ -44,12 +44,12 @@ set_tests_properties (${prefix}_Can_Detect_Wrong_Operation_Format PROPERTIES
     LABELS "${MODULE}")
 	
 add_test(
-    NAME ${prefix}_Kilometer_to_metr
+    NAME ${prefix}_Kilometer_to_meter
     COMMAND ${APPLICATION} 0.0 kilometer 0
 )
 
 set_tests_properties (${prefix}_Kilometer_to_metr PROPERTIES
-    PASS_REGULAR_EXPRESSION "Kilometer-metr converter: 0"
+    PASS_REGULAR_EXPRESSION "Kilometer-meter converter: 0"
     LABELS "${MODULE}")
 	
 add_test(
@@ -58,7 +58,7 @@ add_test(
 )
 
 set_tests_properties (${prefix}_Metr_to_Kilometer PROPERTIES
-    PASS_REGULAR_EXPRESSION "Kilometer-metr converter: 0.005"
+    PASS_REGULAR_EXPRESSION "Kilometer-meter converter: 0.005"
     LABELS "${MODULE}")
 	
 #######################################
