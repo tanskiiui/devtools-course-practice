@@ -110,3 +110,75 @@ TEST_F(LengthCalculatorTest, meter_to_santimeter) {
     // Assert
     Assert("Santimeter-meter converter: 0.05");
 }
+
+TEST_F(LengthCalculatorTest, mile_to_meter) {
+    // Arrange
+    vector<string> args = { "5.0", "mile", "0" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Mile-meter converter: 0.00310685");
+}
+
+TEST_F(LengthCalculatorTest, meter_to_mile) {
+    // Arrange
+    vector<string> args = { "5.0", "mile", "1" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Mile-meter converter: 8046.72");
+}
+
+TEST_F(LengthCalculatorTest, yard_to_meter) {
+    // Arrange
+    vector<string> args = { "5.0", "yard", "0" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Yard-meter converter: 5.46805");
+}
+
+TEST_F(LengthCalculatorTest, meter_to_yard) {
+    // Arrange
+    vector<string> args = { "5.0", "yard", "1" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Yard-meter converter: 4.57201");
+}
+
+TEST_F(LengthCalculatorTest, ft_to_meter) {
+    // Arrange
+    vector<string> args = { "5.0", "ft", "0" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Ft-meter converter: 16.4042");
+}
+
+TEST_F(LengthCalculatorTest, meter_to_ft) {
+    // Arrange
+    vector<string> args = { "5.0", "ft", "1" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Ft-meter converter: 1.524");
+}
+
+TEST_F(LengthCalculatorTest, inch_to_meter) {
+    // Arrange
+    vector<string> args = { "5.0", "inch", "0" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Inch-meter converter: 196.851");
+}
+
+TEST_F(LengthCalculatorTest, meter_to_inch) {
+    // Arrange
+    vector<string> args = { "5.0", "inch", "1" };
+    // Act
+    Act(args);
+    // Assert
+    Assert("Inch-meter converter: 0.127");
+}

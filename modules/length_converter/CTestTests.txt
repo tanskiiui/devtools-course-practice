@@ -86,3 +86,86 @@ add_test(
 set_tests_properties (${prefix}_meter_to_santimeter PROPERTIES
     PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 0.05"
     LABELS "${MODULE}")
+#######################################
+
+add_test(
+    NAME ${prefix}_mile_to_meter
+    COMMAND ${APPLICATION} 5.0 mile 0
+)
+
+set_tests_properties (${prefix}_mile_to_meter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Mile-meter converter: 0.00310685"
+    LABELS "${MODULE}")
+	
+#######################################
+
+add_test(
+    NAME ${prefix}_meter_to_mile
+    COMMAND ${APPLICATION} 5.0 mile 1
+)
+
+set_tests_properties (${prefix}_meter_to_mile PROPERTIES
+    PASS_REGULAR_EXPRESSION "Mile-meter converter: 8046.72"
+    LABELS "${MODULE}")
+#######################################
+
+add_test(
+    NAME ${prefix}_yard_to_meter
+    COMMAND ${APPLICATION} 5.0 yard 0
+)
+
+set_tests_properties (${prefix}_yard_to_meter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Yard-meter converter: 5.46805"
+    LABELS "${MODULE}")
+
+
+add_test(
+    NAME ${prefix}_meter_to_yard
+    COMMAND ${APPLICATION} 5.0 yard 1
+)
+
+set_tests_properties (${prefix}_meter_to_yard PROPERTIES
+    PASS_REGULAR_EXPRESSION "Yard-meter converter: 4.57201"
+    LABELS "${MODULE}")
+	
+#######################################
+
+add_test(
+    NAME ${prefix}_ft_to_meter
+    COMMAND ${APPLICATION} 5.0 ft 0
+)
+
+set_tests_properties (${prefix}_ft_to_meter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Ft-meter converter: 16.4042"
+    LABELS "${MODULE}")
+
+
+add_test(
+    NAME ${prefix}_meter_to_ft
+    COMMAND ${APPLICATION} 5.0 ft 1
+)
+
+set_tests_properties (${prefix}_meter_to_ft PROPERTIES
+    PASS_REGULAR_EXPRESSION "Ft-meter converter: 1.524"
+    LABELS "${MODULE}")
+
+#######################################
+
+add_test(
+    NAME ${prefix}_inch_to_meter
+    COMMAND ${APPLICATION} 5.0 inch 0
+)
+
+set_tests_properties (${prefix}_inch_to_meter PROPERTIES
+    PASS_REGULAR_EXPRESSION "Inch-meter converter: 196.851"
+    LABELS "${MODULE}")
+
+
+add_test(
+    NAME ${prefix}_meter_to_inch
+    COMMAND ${APPLICATION} 5.0 inch 1
+)
+
+set_tests_properties (${prefix}_meter_to_inch PROPERTIES
+    PASS_REGULAR_EXPRESSION "Inch-meter converter: 0.127"
+    LABELS "${MODULE}")
