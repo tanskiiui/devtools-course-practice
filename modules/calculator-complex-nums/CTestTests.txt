@@ -91,3 +91,35 @@ add_test(
 set_tests_properties (${prefix}_can_Add_Negative_Complexs PROPERTIES
     PASS_REGULAR_EXPRESSION "Real = -4 Imaginary = -6"
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_сan_Add_Natural_To_Complex
+    COMMAND ${APPLICATION} 1 2 3 0 +
+)
+set_tests_properties (${prefix}_сan_Add_Natural_To_Complex PROPERTIES
+    PASS_REGULAR_EXPRESSION "Real = 4 Imaginary = 2"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_сan_Substruct_Natural_From_Complex
+    COMMAND ${APPLICATION} 1 2 3 0 -
+)
+set_tests_properties (${prefix}_can_Substruct_Natural_From_Complex PROPERTIES
+    PASS_REGULAR_EXPRESSION "Real = -2 Imaginary = 2"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_сan_Multiply_Natural_By_Complex
+    COMMAND ${APPLICATION} 1 2 3 0 *
+)
+set_tests_properties (${prefix}_can_Multiply_Natural_By_Complex PROPERTIES
+    PASS_REGULAR_EXPRESSION "Real = 3 Imaginary = 6"
+    LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_сan_Divide_Complex_by_Natural
+    COMMAND ${APPLICATION} 1 2 3 0 /
+)
+set_tests_properties (${prefix}_can_Divide_Complex_by_Natural PROPERTIES
+    PASS_REGULAR_EXPRESSION "Real = 0.333 Imaginary = 0.666"
+    LABELS "${MODULE}")
