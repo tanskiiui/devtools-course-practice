@@ -29,7 +29,6 @@ void LengthCalculator::Help(const char* appname, const char* message) {
         "'yard' - yard-meter,\n" +
         "'ft' - ft-meter\n" +
         "'inch'- inch-meter\n\n" +
-  
         "Where 1 is the forward path and 0 is the reverse\n\n" +
         "**************************\n";
 }
