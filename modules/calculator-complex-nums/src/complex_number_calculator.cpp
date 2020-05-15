@@ -2,10 +2,10 @@
 
 #include "include/complex_number_calculator.h"
 
-#include <stdlib.h>
 #include <string.h>
 #include <string>
 #include <sstream>
+#include <сstdlib>
 
 ComplexCalculator::ComplexCalculator() : message_("") {}
 

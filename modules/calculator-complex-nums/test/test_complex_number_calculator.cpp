@@ -111,3 +111,11 @@ TEST_F(ComplexCalculatorTest, Can_Detect_Divide_By_Zero) {
 
     Assert("Can't divide by zero");
 }
+
+TEST_F(ComplexCalculatorTest, Can_Add_Negative_Complexs) {
+    vector<string> args = {"-1", "-2", "-3", "-4", "+"};
+
+    Act(args);
+
+    Assert("Real = -4 Imaginary = -6");
+}

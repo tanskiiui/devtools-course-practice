@@ -83,3 +83,11 @@ add_test(
 set_tests_properties (${prefix}_can_Detect_Divide_By_Zero PROPERTIES
     PASS_REGULAR_EXPRESSION "Can't divide by zero"
     LABELS "${MODULE}")
+
+add_test(
+    NAME ${prefix}_can_Add_Negative_Complexs
+    COMMAND ${APPLICATION} -1 -2 -3 -4 +
+)
+set_tests_properties (${prefix}_can_Add_Negative_Complexs PROPERTIES
+    PASS_REGULAR_EXPRESSION "Real = -4 Imaginary = -6"
+    LABELS "${MODULE}")
