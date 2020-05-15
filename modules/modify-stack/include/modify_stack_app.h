@@ -3,12 +3,19 @@
 #ifndef MODULES_MODIFY_STACK_APP_INCLUDE_MODIFY_STACK_APP_H_
 #define MODULES_MODIFY_STACK_APP_INCLUDE_MODIFY_STACK_APP_H_
 
+#include <string>
+#include "include/modify_stack.h"
+
 class StackApp {
- private: 
-    int a;
  public:
-    StackApp(int a);
-    int getA();
+    StackApp();
+    std::string operator()(int argc, const char** argv);
+
+ private:
+    void help(const char* appname, const char* message = "");
+    bool validateNumberOfArguments(int argc, const char** argv);
+    std::string message_;
+    Stack stack;
 };
 
 #endif  // MODULES_MODIFY_STACK_APP_INCLUDE_MODIFY_STACK_APP_H_
