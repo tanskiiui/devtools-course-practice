@@ -146,9 +146,9 @@ void SortArray::remove(const size_t index) {
 }
 
 size_t SortArray::search(const int32_t elem) {
-    size_t left = 0, right = data.size() - 1, rl;
+    size_t left = 0, right = data.size() - 1;
     while (left <= right) {
-        rl = (right + left) / 2;
+        size_t rl = (right + left) / 2;
         if (elem == data[rl]) {
             return rl;
         } else if (elem < data[rl]) {
