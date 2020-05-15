@@ -34,7 +34,7 @@ bool StackApp::validateNumberOfArguments(int argc, const char** argv) {
 Stack parseStack(const char* arg) {
     std::string str = arg;
     for (auto& s : str) {
-        if (!(isdigit(s) || s == '.' || s == ' ')) {
+        if (!(isdigit(s) || s == ',' || s == '.' || s == ' ')) {
             throw std::string("ERROR: Wrong format!");
         }
     }
@@ -62,7 +62,6 @@ std::string StackApp::operator()(int argc, const char** argv) {
     catch (std::string &str) {
         return str;
     }
-    
     while (!stack.isEmpty()) {
         resultMin << stack.getMin() << " ";
         result << stack.pop() << " ";

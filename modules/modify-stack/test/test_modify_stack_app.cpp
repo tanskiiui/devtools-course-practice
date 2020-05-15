@@ -14,11 +14,8 @@ using ::testing::internal::RE;
 using std::vector;
 using std::string;
 
-
 class StackAppTest : public ::testing::Test {
  protected:
-    // virtual void SetUp() {}
-
     void Act(vector<string> args_) {
         vector<const char*> options;
 
@@ -75,7 +72,7 @@ TEST_F(StackAppTest, Can_Detect_Wrong_Number_Format) {
     Assert("ERROR: Wrong format!");
 }
 
-TEST_F(StackAppTest, Stack_Int_Example) {
+TEST_F(StackAppTest, Can_Calculate_Int_Example) {
     // Arrange
     vector<string> args = { "12 3 34 1 6" };
 
@@ -86,7 +83,7 @@ TEST_F(StackAppTest, Stack_Int_Example) {
     Assert("MIN: 1 1 3 3 12  Stack: 6 1 34 3 12");
 }
 
-TEST_F(StackAppTest, Stack_Double_Example) {
+TEST_F(StackAppTest, Can_Calculate_Double_Example) {
     // Arrange
     vector<string> args = { "2.5 6.6 1.2 36.364" };
 
