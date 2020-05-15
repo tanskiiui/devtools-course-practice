@@ -214,6 +214,6 @@ add_test(
     COMMAND ${APPLICATION} -5.0 inch 1
 )
 
-set_tests_properties (${prefix}_meter_to_inch PROPERTIES
+set_tests_properties (${prefix}_meter_to_inch_minus PROPERTIES
     PASS_REGULAR_EXPRESSION "Inch-meter converter: -1"
     LABELS "${MODULE}")
