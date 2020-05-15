@@ -41,9 +41,9 @@ Stack parseStack(const char* arg) {
     std::vector<double> vec;
     std::istringstream in(str);
     int size = 0;
-    for(double n; in >> n; vec.push_back(n), in.get(), size++) {}
+    for (double n; in >> n; vec.push_back(n), in.get(), size++) {}
     Stack stack(size);
-    for(double elem : vec) {
+    for (double elem : vec) {
         stack.put(elem);
     }
     return stack;
