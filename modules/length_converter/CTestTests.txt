@@ -53,8 +53,6 @@ add_test(
 set_tests_properties (${prefix}_Kilometer_to_meter PROPERTIES
     PASS_REGULAR_EXPRESSION "Kilometer-meter converter: 0"
     LABELS "${MODULE}")
-	
-######################################
 
 add_test(
     NAME ${prefix}_Meter_to_Kilometer
@@ -63,6 +61,15 @@ add_test(
 
 set_tests_properties (${prefix}_Meter_to_Kilometer PROPERTIES
     PASS_REGULAR_EXPRESSION "Kilometer-meter converter: 0.005"
+    LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_Meter_to_Kilometer_minus
+    COMMAND ${APPLICATION} -5.0 kilometer 0
+)
+
+set_tests_properties (${prefix}_Meter_to_Kilometer_minus PROPERTIES
+    PASS_REGULAR_EXPRESSION "Kilometer-meter converter: -1"
     LABELS "${MODULE}")
 	
 #######################################
@@ -75,8 +82,6 @@ add_test(
 set_tests_properties (${prefix}_santimeter_to_meter PROPERTIES
     PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 500"
     LABELS "${MODULE}")
-	
-#######################################
 
 add_test(
     NAME ${prefix}_meter_to_santimeter
@@ -85,6 +90,15 @@ add_test(
 
 set_tests_properties (${prefix}_meter_to_santimeter PROPERTIES
     PASS_REGULAR_EXPRESSION "Santimeter-meter converter: 0.05"
+    LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_meter_to_santimeter_minus
+    COMMAND ${APPLICATION} -5.0 santimeter 1
+)
+
+set_tests_properties (${prefix}_meter_to_santimeter_minus PROPERTIES
+    PASS_REGULAR_EXPRESSION "Santimeter-meter converter: -1"
     LABELS "${MODULE}")
 #######################################
 
@@ -96,8 +110,6 @@ add_test(
 set_tests_properties (${prefix}_mile_to_meter PROPERTIES
     PASS_REGULAR_EXPRESSION "Mile-meter converter: 0.00310685"
     LABELS "${MODULE}")
-	
-#######################################
 
 add_test(
     NAME ${prefix}_meter_to_mile
@@ -107,6 +119,15 @@ add_test(
 set_tests_properties (${prefix}_meter_to_mile PROPERTIES
     PASS_REGULAR_EXPRESSION "Mile-meter converter: 8046.72"
     LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_meter_to_mile_minus
+    COMMAND ${APPLICATION} -5.0 mile 1
+)
+
+set_tests_properties (${prefix}_meter_to_mile_minus PROPERTIES
+    PASS_REGULAR_EXPRESSION "Mile-meter converter: -1"
+    LABELS "${MODULE}")	
 #######################################
 
 add_test(
@@ -126,6 +147,15 @@ add_test(
 
 set_tests_properties (${prefix}_meter_to_yard PROPERTIES
     PASS_REGULAR_EXPRESSION "Yard-meter converter: 4.57201"
+    LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_meter_to_yard_minus
+    COMMAND ${APPLICATION} -5.0 yard 1
+)
+
+set_tests_properties (${prefix}_meter_to_yard_minus PROPERTIES
+    PASS_REGULAR_EXPRESSION "Yard-meter converter: -1"
     LABELS "${MODULE}")
 	
 #######################################
@@ -148,6 +178,15 @@ add_test(
 set_tests_properties (${prefix}_meter_to_ft PROPERTIES
     PASS_REGULAR_EXPRESSION "Ft-meter converter: 1.524"
     LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_meter_to_ft_minus
+    COMMAND ${APPLICATION} -5.0 ft 1
+)
+
+set_tests_properties (${prefix}_meter_to_ft_minus PROPERTIES
+    PASS_REGULAR_EXPRESSION "Ft-meter converter: -1"
+    LABELS "${MODULE}")
 
 #######################################
 
@@ -168,4 +207,13 @@ add_test(
 
 set_tests_properties (${prefix}_meter_to_inch PROPERTIES
     PASS_REGULAR_EXPRESSION "Inch-meter converter: 0.127"
+    LABELS "${MODULE}")
+	
+add_test(
+    NAME ${prefix}_meter_to_inch_minus
+    COMMAND ${APPLICATION} -5.0 inch 1
+)
+
+set_tests_properties (${prefix}_meter_to_inch PROPERTIES
+    PASS_REGULAR_EXPRESSION "Inch-meter converter: -1"
     LABELS "${MODULE}")
