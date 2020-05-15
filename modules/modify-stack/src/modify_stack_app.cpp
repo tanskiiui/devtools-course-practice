@@ -3,9 +3,9 @@
 #include "include/modify_stack.h"
 #include "include/modify_stack_app.h"
 #include <vector>
+#include <string>
 #include <iostream>
 #include <sstream>
-using namespace std;
 
 StackApp::StackApp() : message_("") {}
 
@@ -31,7 +31,7 @@ bool StackApp::validateNumberOfArguments(int argc, const char** argv) {
     return true;
 }
 
- Stack parseStack(const char* arg) {
+Stack parseStack(const char* arg) {
     std::string str = arg;
     for (auto& s : str) {
         if (!(isdigit(s) || s == '.' || s == ' ')) {
@@ -41,13 +41,13 @@ bool StackApp::validateNumberOfArguments(int argc, const char** argv) {
     std::vector<double> vec;
     std::istringstream in(str);
     int size = 0;
-    for (double n; in >> n; vec.push_back(n), in.get(), size++) {}
+    for(double n; in >> n; vec.push_back(n), in.get(), size++) {}
     Stack stack(size);
     for(double elem : vec) {
         stack.put(elem);
     }
     return stack;
- }
+}
 
 std::string StackApp::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) {

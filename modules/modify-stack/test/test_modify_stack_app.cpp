@@ -59,7 +59,7 @@ TEST_F(StackAppTest, Is_Checking_Number_Of_Arguments) {
 
     // Act
     Act(args);
-    
+
     // Assert
     Assert("ERROR: Should be 1 argument.");
 }

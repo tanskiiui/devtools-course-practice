@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <vector>
 #include "include/modify_stack_app.h"
 
 int main(int argc, const char** argv) {
