@@ -304,6 +304,38 @@ TEST(SortArrayTEST, Can_Change_Element_In_SortArray_Correct_3) {
     EXPECT_EQ(res, a[index]);
 }
 
+TEST(SortArrayTEST, Can_Remove_Element_In_SortArray_Without_Throws) {
+    // Arrange
+    SortArray a({ 3, 10, -5, 1, 7 });
+
+    // Act & Assert
+    a.remove(2);
+}
+
+TEST(SortArrayTEST, Can_Remove_Element_In_SortArray_Correct_1) {
+    // Arrange
+    SortArray a({ 3, 10, -5, 1, 7 });
+    int32_t res = 7, index = 2;
+
+    // Act
+    a.remove(index);
+
+    // Assert
+    EXPECT_EQ(res, a[index]);
+}
+
+TEST(SortArrayTEST, Can_Remove_Element_In_SortArray_Correct_2) {
+    // Arrange
+    SortArray a({ 3, 10, -5, 1, 7 });
+    int32_t res = 1, index = 0;
+
+    // Act
+    a.remove(index);
+
+    // Assert
+    EXPECT_EQ(res, a[index]);
+}
+
 TEST(SortArrayTEST, Can_Search_In_SortArray_Without_Throws) {
     // Arrange
     SortArray a({ 3, 10, 2, 12, -3, -5, 1 });

@@ -9,12 +9,11 @@
 
 class SortVectorApp {
  public:
-    SortVectorApp();
+    SortVectorApp() = default;
     std::string operator()(int argc, const char** argv);
  private:
     std::string help(const char* appname, const char* message = "");
     bool validateNumberOfArguments(int argc, const char** argv);
- private:
     SortArray _array;
     std::stringstream _sstream;
 };

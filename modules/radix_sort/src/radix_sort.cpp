@@ -141,16 +141,20 @@ void SortArray::resize(const size_t newSize) {
     data.resize(newSize);
 }
 
+void SortArray::remove(const size_t index) {
+    data.erase(data.begin() + index);
+}
+
 size_t SortArray::search(const int32_t elem) {
-    size_t left = 0, right = data.size() - 1;
+    size_t left = 0, right = data.size() - 1, rl;
     while (left <= right) {
-        if (elem == data[(right + left) / 2]) {
-            return (right + left) / 2;
-        } else if (elem < data[(right + left) / 2]) {
-            right = (right + left) / 2;
+        rl = (right + left) / 2;
+        if (elem == data[rl]) {
+            return rl;
+        } else if (elem < data[rl]) {
+            right = rl;
         } else {
-            left = (right + left) / 2 == left ? (right + left) / 2 + 1 :
-                (right + left) / 2;
+            left = rl == left ? rl + 1 : rl;
         }
     }
     return -1;

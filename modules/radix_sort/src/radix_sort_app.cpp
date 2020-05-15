@@ -20,8 +20,6 @@ int parseNumbers(const char* number) {
     return std::atoi(number);
 }
 
-SortVectorApp::SortVectorApp() {}
-
 std::string SortVectorApp::operator()(int argc, const char** argv) {
     if (!validateNumberOfArguments(argc, argv)) return _sstream.str();
 

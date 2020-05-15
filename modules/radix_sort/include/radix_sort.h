@@ -22,6 +22,7 @@ class SortArray {
     void push(const int32_t elem);
     void pushVector(const std::vector<int32_t>& vector);
     void resize(const size_t newSize);
+    void remove(const size_t index);
     size_t search(const int32_t elem);
     bool isEmpty() const;
     void operator()(std::vector<int32_t>* vector);
