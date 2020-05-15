@@ -46,7 +46,7 @@ TEST_F(Converter_impl_Test, Do_Print_Help_Without_Arguments) {
 
     Act(args);
 
-    Assert("This is a temperature converter application.\\..*");
+    Assert("This is a temperature converter application\\..*");
 }
 
 TEST_F(Converter_impl_Test, Is_Checking_Number_Of_Arguments) {
