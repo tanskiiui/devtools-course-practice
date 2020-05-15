@@ -21,13 +21,15 @@ void LengthCalculator::Help(const char* appname, const char* message) {
 
         "<value> have to be a double-precision number\n\n" +
         "<operation> is one of the following\n\n" +
+        "and <side> is which way to translate \n\n" +
+        "For example:" + "  $ " + appname + " 50.0 inch 1 \n\n" +
         "'kilometer' - kilometer-meter,\n" +
         "'santimeter' - santimeter-meter,\n" +
         "'mile'- mile-meter,\n" +
         "'yard' - yard-meter,\n" +
         "'ft' - ft-meter\n" +
         "'inch'- inch-meter\n\n" +
-        "and <side> is which way to translate \n" +
+  
         "Where 1 is the forward path and 0 is the reverse\n\n" +
         "**************************\n";
 }
