@@ -41,155 +41,155 @@ class ComplexCalculatorTest : public ::testing::Test {
 };
 
 TEST_F(ComplexCalculatorTest, Do_Print_Help_Without_Arguments) {
-    //Arrange
+    // Arrange
     vector<string> args = {};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("This is a complex number calculator application\\..*");
 }
 
 TEST_F(ComplexCalculatorTest, Is_Checking_Number_Of_Arguments) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "2"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("ERROR: Should be 5 arguments\\..*");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Detect_Wrong_Number_Format) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "pi", "2", "4", "+"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Wrong number format!.*");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Detect_Wrong_Operation_Format) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "1", "1", "1", "garbage"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Wrong operation format!");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Add_Complexs) {
-    //Arrange
+    // Arrange
     vector<string> args = {"2.0", "3.5", "1.5", "4.0", "+"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 3.5 Imaginary = 7.5");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Diff_Complexs) {
-    //Arrange
+    // Arrange
     vector<string> args = {"13", "7.6", "26", "-14", "-"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = -13 Imaginary = 21.6");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Mult_Complexs) {
-    //Arrange
+    // Arrange
     vector<string> args = {"0", "-3.6", "17.4", "21", "*"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 75.6 Imaginary = -62.64");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Divide_Complexs) {
-    //Arrange
+    // Arrange
     vector<string> args = {"27", "30", "15", "20", "/"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 1.608 Imaginary = -0.144");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Detect_Divide_By_Zero) {
-    //Arrange
+    // Arrange
     vector<string> args = {"27", "30", "0", "0", "/"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Can't divide by zero");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Add_Negative_Complexs) {
-    //Arrange
+    // Arrange
     vector<string> args = {"-1", "-2", "-3", "-4", "+"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = -4 Imaginary = -6");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Add_Natural_To_Complex) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "2", "3", "0", "+"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 4 Imaginary = 2");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Substruct_Natural_From_Complex) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "2", "3", "0", "-"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = -2 Imaginary = 2");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Multiply_Natural_By_Complex) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "2", "3", "0", "*"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 3 Imaginary = 6");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Divide_Complex_by_Natural) {
-    //Arrange
+    // Arrange
     vector<string> args = {"1", "2", "3", "0", "/"};
 
-    //Act
+    // Act
     Act(args);
 
-    //Assert
+    // Assert
     Assert("Real = 0.333333 Imaginary = 0.666667");
 }
