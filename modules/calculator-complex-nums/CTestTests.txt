@@ -121,5 +121,5 @@ add_test(
     COMMAND ${APPLICATION} 1 2 3 0 /
 )
 set_tests_properties (${prefix}_can_Divide_Complex_by_Natural PROPERTIES
-    PASS_REGULAR_EXPRESSION "Real = 0.333 Imaginary = 0.666"
+    PASS_REGULAR_EXPRESSION "Real = 0.333333 Imaginary = 0.666667"
     LABELS "${MODULE}")

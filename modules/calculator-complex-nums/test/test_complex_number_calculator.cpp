@@ -158,7 +158,7 @@ TEST_F(ComplexCalculatorTest, Can_Add_Natural_To_Complex) {
     Act(args);
 
     //Assert
-    Assert("Read = 4 Imaginary = 2");
+    Assert("Real = 4 Imaginary = 2");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Substruct_Natural_From_Complex) {
@@ -169,7 +169,7 @@ TEST_F(ComplexCalculatorTest, Can_Substruct_Natural_From_Complex) {
     Act(args);
 
     //Assert
-    Assert("Read = -2 Imaginary = 2");
+    Assert("Real = -2 Imaginary = 2");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Multiply_Natural_By_Complex) {
@@ -180,7 +180,7 @@ TEST_F(ComplexCalculatorTest, Can_Multiply_Natural_By_Complex) {
     Act(args);
 
     //Assert
-    Assert("Read = 3 Imaginary = 6");
+    Assert("Real = 3 Imaginary = 6");
 }
 
 TEST_F(ComplexCalculatorTest, Can_Divide_Complex_by_Natural) {
@@ -191,5 +191,5 @@ TEST_F(ComplexCalculatorTest, Can_Divide_Complex_by_Natural) {
     Act(args);
 
     //Assert
-    Assert("Read = 0.333 Imaginary = 0.666");
+    Assert("Real = 0.333333 Imaginary = 0.666667");
 }
