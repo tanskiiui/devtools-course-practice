@@ -62,6 +62,7 @@ char parseOperation(const char* arg) {
             throw std::string("Wrong operation format!");
     }
     return op;
+    
 }
 
 std::string ComplexCalculator::operator()(int argc, const char** argv) {
