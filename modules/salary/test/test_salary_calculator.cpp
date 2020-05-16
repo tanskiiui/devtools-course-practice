@@ -15,7 +15,6 @@ using std::string;
 
 class SalaryCalculatorTest : public ::testing::Test {
  protected:
-
     void Act(vector<string> args_) {
         vector<const char*> options;
 
