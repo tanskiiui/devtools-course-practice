@@ -4,7 +4,6 @@
 #include "include/modify_stack_app.h"
 #include <vector>
 #include <string>
-#include <iostream>
 #include <sstream>
 
 StackApp::StackApp() : message_("") {}
@@ -38,14 +37,17 @@ Stack parseStack(const char* arg) {
             throw std::string("ERROR: Wrong format!");
         }
     }
+
     std::vector<double> vec;
     std::istringstream in(str);
     int size = 0;
     for (double n; in >> n; vec.push_back(n), in.get(), size++) {}
+
     Stack stack(size);
     for (double elem : vec) {
         stack.put(elem);
     }
+
     return stack;
 }
 
@@ -56,12 +58,14 @@ std::string StackApp::operator()(int argc, const char** argv) {
     std::ostringstream result;
     std::ostringstream resultMin;
     Stack stack;
+
     try {
         stack = parseStack(argv[1]);
     }
     catch (std::string &str) {
         return str;
     }
+
     while (!stack.isEmpty()) {
         resultMin << stack.getMin() << " ";
         result << stack.pop() << " ";
