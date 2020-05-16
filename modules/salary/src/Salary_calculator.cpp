@@ -36,7 +36,7 @@ const char** argv) {
     return true;
 }
 
-unsigned int parseUnsignedInt(const char* arg){
+unsigned int parseUnsignedInt(const char* arg) {
 char* end;
 unsigned int value = std::strtoul(arg, &end, 0);
 if (end[0]) {
@@ -46,7 +46,7 @@ if (end[0]) {
 return value;
 }
 
-float parseFloat(const char* arg){
+float parseFloat(const char* arg) {
     char* end;
     float value = strtof(arg, &end);
 if (end[0]) {

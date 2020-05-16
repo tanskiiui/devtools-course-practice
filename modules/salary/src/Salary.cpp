@@ -19,8 +19,7 @@ float Salary::payment() {
     float paymentOver;
     if (m_hours_over <= 2) {
         paymentOver = paymentPerHour * 1.5f * m_hours_over;
-    }
-    else {
+    } else {
         paymentOver = paymentPerHour * 2.f * (m_hours_over - 2) +
             paymentPerHour * 1.5f * 2;
     }

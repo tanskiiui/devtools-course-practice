@@ -17,7 +17,7 @@ TEST_F(SalaryTest1, Work_Without_Administrative_Leave_And_Without_H_W) {
     a1.setHours(40);
     a1.setOverHours(0);
     a1.setAdminHours(0);
-    
+
     // Act
     float payment = a1.payment();
 
