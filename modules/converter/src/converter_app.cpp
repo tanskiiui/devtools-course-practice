@@ -5,7 +5,6 @@
 
 #include <iostream>
 #include <string>
-#include <string>
 #include <sstream>
 
 Converter_impl::Converter_impl() : message_("") {}
