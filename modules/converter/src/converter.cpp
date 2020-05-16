@@ -7,7 +7,7 @@ double Convert::convert_to_Kelvins(const double& celsius) {
 }
 
 double Convert::convert_to_Fahrenheit(const double& celsius) {
-    return (celsius * 1.8 + 32);
+    return (celsius * coef_to_Fahrenheit + num_to_Fahrenheit);
 }
 
 double Convert::convert_to_Newton(const double& celsius) {
