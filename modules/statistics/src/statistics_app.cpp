@@ -70,13 +70,8 @@ std::string parseOperation(const char* arg) {
   } else if (strcmp(arg, "d") == 0) {
     op = "d";
   } else {
-    try {
-      std::string arg1(arg);
-      op = std::to_string(std::stoi(arg1, nullptr));
-    }
-    catch (...) {
-      throw std::string("Wrong operation format!");
-    }
+    std::string arg1(arg);
+    op = std::to_string(std::stoi(arg1, nullptr));
   }
   return op;
 }
@@ -96,6 +91,9 @@ std::string Statistics_app::operator()(int argc, const char** argv) {
   }
   catch (std::string &str) {
     return str;
+  }
+  catch (...) {
+    return "Wrong operation format!";
   }
 
   std::map<int, double> S;
