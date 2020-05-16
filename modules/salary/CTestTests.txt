@@ -37,10 +37,10 @@ set_tests_properties (${prefix}_can_Detect_Wrong_Number_Format PROPERTIES
     LABELS "${MODULE}")
 
 add_test(
-    NAME ${prefix}_Can_Get_MonthlyPayment
+    NAME ${prefix}_Can_Get_Payment
     COMMAND ${APPLICATION} 40 3 6 120000
 )
-set_tests_properties (${prefix}_Can_Get_MonthlyPayment PROPERTIES
+set_tests_properties (${prefix}_Can_Get_Payment PROPERTIES
     PASS_REGULAR_EXPRESSION "payment = 117000"
     LABELS "${MODULE}")
     
