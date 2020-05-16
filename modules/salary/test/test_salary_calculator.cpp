@@ -1,147 +1,73 @@
-// Copyright 2020 SAVIN DMITRIY
+// Copyright 2020 Petrov Anton
 
 #include <gtest/gtest.h>
-#include "include/Salary.h"
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <functional>
+#include <iterator>
 
-class SalaryTest1 : public ::testing::Test {
+#include "include/Salary_calculator.h"
+
+using ::testing::internal::RE;
+using std::vector;
+using std::string;
+
+class SalaryCalculatorTest : public ::testing::Test {
+ protected:
+    // virtual void SetUp() {}
+
+    void Act(vector<string> args_) {
+        vector<const char*> options;
+
+        options.push_back("appname");
+        for (size_t i = 0; i < args_.size(); ++i) {
+            options.push_back(args_[i].c_str());
+        }
+
+        const char** argv = &options.front();
+        int argc = static_cast<int>(args_.size()) + 1;
+
+        output_ = app_(argc, argv);
+    }
+
+    void Assert(std::string expected) {
+        EXPECT_TRUE(RE::PartialMatch(output_, RE(expected)));
+    }
+
+ private:
+    SalaryCalculator app_;
+    string output_;
 };
 
-TEST_F(SalaryTest1, Work_Without_Administrative_Leave_And_Without_H_W) {
-    // Arrange
-    float m_salary = 120000;
-    float m_hours = 40;
-    float m_hours_over = 0;
-    float m_hours_admin = 0;
-    Salary a1;
-    a1.setSalary(120000);
-    a1.setHours(40);
-    a1.setOverHours(0);
-    a1.setAdminHours(0);
+TEST_F(SalaryCalculatorTest, Do_Print_Help_Without_Arguments) {
+    vector<string> args = {};
 
-    // Act
-    float payment = a1.payment();
+    Act(args);
 
-    // Assert
-    EXPECT_EQ(120000, payment);
+    Assert("This is a salary calculator application\\..*");
 }
 
-TEST_F(SalaryTest1, Work_Without_Administrative_Leave_With_Two_R_H) {
-    // Arrange
-    float m_salary = 120000;
-    float m_hours = 40;
-    float m_hours_over = 2;
-    float m_hours_admin = 0;
-    Salary a2;
-    a2.setSalary(120000);
-    a2.setHours(40);
-    a2.setOverHours(2);
-    a2.setAdminHours(0);
+TEST_F(SalaryCalculatorTest, Is_Checking_Number_Of_Arguments) {
+    vector<string> args = { "1000", "2000"};
 
-    // Act
-    float payment = a2.payment();
+    Act(args);
 
-    // Assert
-    EXPECT_EQ(129000, payment);
+    Assert("ERROR: Should be 4 arguments\\..*");
 }
 
-TEST_F(SalaryTest1, Work_With_Administrative_Leave_With_Recycled_W) {
-    // Arrange
-    float m_salary = 120000;
-    float m_hours = 40;
-    float m_hours_over = 3;
-    float m_hours_admin = 6;
-    Salary a3;
-    a3.setSalary(120000);
-    a3.setHours(40);
-    a3.setOverHours(3);
-    a3.setAdminHours(6);
+TEST_F(SalaryCalculatorTest, Can_Set_All_Paramaters) {
+    vector<string> args = { "40", "3", "6", "120000" };
 
-    // Act
-    float payment = a3.payment();
+    Act(args);
 
-    // Assert
-    EXPECT_EQ(117000, payment);
+    Assert("payment = 117000");
 }
 
-TEST_F(SalaryTest1, Work_With_Administrative_Leave_Without_Hours) {
-    // Arrange
-    float m_salary = 120000;
-    float m_hours = 40;
-    float m_hours_over = 0;
-    float m_hours_admin = 17;
-    Salary a4;
-    a4.setSalary(120000);
-    a4.setHours(40);
-    a4.setOverHours(0);
-    a4.setAdminHours(17);
+TEST_F(SalaryCalculatorTest, Can_Detect_Wrong_Number_Format) {
+    vector<string> args = { "1000", "2000", "4000", "pi"};
 
-    // Act
-    float payment = a4.payment();
+    Act(args);
 
-    // Assert
-    EXPECT_EQ(69000, payment);
-}
-
-TEST_F(SalaryTest1, Working_With_Zero_Hours_Worked) {
-    // Arrange
-    float m_salary = 120000;
-    float m_hours = 0;
-    float m_hours_over = 19;
-    float m_hours_admin = 17;
-    Salary a5;
-    a5.setSalary(120000);
-    a5.setHours(0);
-    a5.setOverHours(19);
-    a5.setAdminHours(17);
-
-    // Act
-    float payment = a5.payment();
-    float exptcted = 0.0;
-
-    // Assert
-    EXPECT_EQ(exptcted, payment);
-}
-
-TEST_F(SalaryTest1, Erroneous_Salary_Payment) {
-    // Arrange
-    float m_salary = -120000;
-    float m_hours = 0;
-    float m_hours_over = 19;
-    float m_hours_admin = 17;
-    Salary a6;
-    a6.setSalary(-120000);
-    a6.setHours(0);
-    a6.setOverHours(19);
-    a6.setAdminHours(17);
-
-    // Act
-    float payment = a6.payment();
-    float exptcted = 0.0;
-
-    // Assert
-    EXPECT_EQ(exptcted, payment);
-}
-
-TEST_F(SalaryTest1, Erroneous_Salary_Payment_Chek_Wrong_Admin_H) {
-    // Arrange
-    float m_hours_admin = -1;
-    Salary a7;
-
-    // Act
-    bool res = a7.setAdminHours(m_hours_admin);
-
-    // Assert
-    EXPECT_FALSE(res);
-}
-
-TEST_F(SalaryTest1, Erroneous_Salary_Payment_Chek_Wrong_Ower_H) {
-    // Arrange
-    float m_hours_over = -1;
-    Salary a8;
-
-    // Act
-    bool res = a8.setOverHours(m_hours_over);
-
-    // Assert
-    EXPECT_FALSE(res);
+    Assert("Wrong number format!.*");
 }
