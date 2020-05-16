@@ -90,7 +90,7 @@ std::string Converter_impl::operator()(int argc, const char** argv) {
                << "Farenheits = " << output;
         break;
      case 'n':
-         output = convertor.convert_to_Newton(args.celsius);
+        output = convertor.convert_to_Newton(args.celsius);
         stream << "Celsius = " << args.celsius << " "
                << "Newtons = " << output;
         break;

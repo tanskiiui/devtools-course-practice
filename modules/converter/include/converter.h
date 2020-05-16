@@ -1,4 +1,4 @@
-// Copyright 2020 Egorov Danil
+// Copyright 2020 Andreev Sergey
 
 #ifndef MODULES_CONVERTER_INCLUDE_CONVERTER_H_
 #define MODULES_CONVERTER_INCLUDE_CONVERTER_H_
