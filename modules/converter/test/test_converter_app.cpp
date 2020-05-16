@@ -16,8 +16,6 @@ using std::string;
 
 class Converter_impl_Test : public ::testing::Test {
  protected:
-    // virtual void SetUp() {}
-
     void Act(vector<string> args_) {
         vector<const char*> options;
 

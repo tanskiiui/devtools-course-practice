@@ -3,10 +3,8 @@
 #include "include/converter.h"
 #include "include/converter_impl.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
+#include <iostream>
+#include <string>
 #include <string>
 #include <sstream>
 
