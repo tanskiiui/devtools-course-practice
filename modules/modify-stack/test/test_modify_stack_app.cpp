@@ -1,12 +1,8 @@
 // Copyright 2020 Okmyanskiy Andrey
 
 #include <gtest/gtest.h>
-
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <functional>
-#include <iterator>
 
 #include "include/modify_stack_app.h"
 
