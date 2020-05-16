@@ -2,10 +2,8 @@
 
 #include "include/complex_number_calculator.h"
 
-#include <string.h>
 #include <string>
 #include <sstream>
-#include <cstdlib>
 
 ComplexCalculator::ComplexCalculator() : message_("") {}
 
@@ -34,10 +32,11 @@ bool ComplexCalculator::validateNumberOfArguments(int argc, const char** argv) {
 }
 
 double parseDouble(const char* arg) {
-    char* end;
-    double value = strtod(arg, &end);
-
-    if (end[0]) {
+    double value;
+    try{
+        value = std::stod(arg);
+    }
+    catch(...){
         throw std::string("Wrong number format!");
     }
 
@@ -46,16 +45,21 @@ double parseDouble(const char* arg) {
 
 char parseOperation(const char* arg) {
     char op;
-    if (strcmp(arg, "+") == 0) {
-        op = '+';
-    } else if (strcmp(arg, "-") == 0) {
-        op = '-';
-    } else if (strcmp(arg, "*") == 0) {
-        op = '*';
-    } else if (strcmp(arg, "/") == 0) {
-        op = '/';
-    } else {
-        throw std::string("Wrong operation format!");
+    switch (*arg) {
+        case '+':
+            op = '+';
+            break;
+        case '-':
+            op = '-';
+            break;
+        case '*':
+            op = '*';
+            break;
+        case '/':
+            op = '/';
+            break;
+        default:
+            throw std::string("Wrong operation format!");
     }
     return op;
 }
