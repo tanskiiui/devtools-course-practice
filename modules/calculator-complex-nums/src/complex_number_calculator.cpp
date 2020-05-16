@@ -33,10 +33,10 @@ bool ComplexCalculator::validateNumberOfArguments(int argc, const char** argv) {
 
 double parseDouble(const char* arg) {
     double value;
-    try{
+    try {
         value = std::stod(arg);
     }
-    catch(...){
+    catch(...) {
         throw std::string("Wrong number format!");
     }
 
