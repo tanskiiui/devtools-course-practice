@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string>
 
-#include "include/converter_impl.h"
+#include "include/converter_app.h"
 
 int main(int argc, const char** argv) {
     Converter_impl app;

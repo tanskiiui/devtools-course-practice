@@ -8,7 +8,7 @@
 #include <functional>
 #include <iterator>
 
-#include "include/converter_impl.h"
+#include "include/converter_app.h"
 
 using ::testing::internal::RE;
 using std::vector;
