@@ -1,4 +1,4 @@
-// Copyright 2020 Maximova Irina
+// Copyright 2020 Maximova Irina & Kukushina Ksenia
 
 #include "include/statistics.h"
 
@@ -17,7 +17,7 @@ int Distribution::checkProbability(Map rand_var) const {
     if (val.second < 0) return -1;
     sum_probabilities += val.second;
   }
-  return (sum_probabilities > 1 - eps && sum_probabilities < 1 + eps) ? 1 : 0;
+  return (sum_probabilities > 1 - eps && sum_probabilities < 1 + eps);
 }
 
 Distribution::Distribution() {}
