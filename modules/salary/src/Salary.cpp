@@ -1,4 +1,4 @@
-// Copyright 2020 SAVIN DMITRIY
+// Copyright 2020 Savin Dmitry
 #include "include/Salary.h"
 
 Salary::Salary() {

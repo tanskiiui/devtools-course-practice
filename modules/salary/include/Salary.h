@@ -1,4 +1,4 @@
-// Copyright 2020 SAVIN DMITRIY
+// Copyright 2020 Savin Dmitry
 #ifndef MODULES_SALARY_INCLUDE_SALARY_H_
 #define MODULES_SALARY_INCLUDE_SALARY_H_
 class Salary {
