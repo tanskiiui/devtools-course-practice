@@ -1,4 +1,4 @@
-// Copyright 2020 Tanskii Yurii
+// Copyright 2020 Tanskii Yurii & Okmyanskiy Andrey
 
 #include <gtest/gtest.h>
 
@@ -26,12 +26,23 @@ TEST(Stack, Can_Create_With_No_Size) {
     EXPECT_EQ(ex_size, s.getSize());
 }
 
-TEST(Stack, Can_Assert_With_Negative_Size) {
+TEST(Stack, Can_Assert_With_Zero_Size) {
     // Arrange
-    int size = 0;
+    int size;
 
     // Act
-    size--;
+    size = 0;
+
+    // Assert
+    ASSERT_ANY_THROW(Stack s(size));
+}
+
+TEST(Stack, Can_Assert_With_Negative_Size) {
+    // Arrange
+    int size;
+
+    // Act
+    size = -1;
 
     // Assert
     ASSERT_ANY_THROW(Stack s(size));
