@@ -31,18 +31,6 @@ bool ComplexCalculator::validateNumberOfArguments(int argc, const char** argv) {
     return true;
 }
 
-double parseDouble(const char* arg) {
-    double value;
-    try {
-        value = std::stod(arg);
-    }
-    catch(...) {
-        throw std::string("Wrong number format!");
-    }
-
-    return value;
-}
-
 char parseOperation(const char* arg) {
     char op;
     switch (*arg) {
@@ -70,14 +58,17 @@ std::string ComplexCalculator::operator()(int argc, const char** argv) {
     }
 
     try {
-        n1.setRe(parseDouble(argv[1]));
-        n1.setIm(parseDouble(argv[2]));
-        n2.setRe(parseDouble(argv[3]));
-        n2.setIm(parseDouble(argv[4]));
+        n1.setRe(std::stod(argv[1]));
+        n1.setIm(std::stod(argv[2]));
+        n2.setRe(std::stod(argv[3]));
+        n2.setIm(std::stod(argv[4]));
         operation = parseOperation(argv[5]);
     }
     catch(std::string &str) {
         return str;
+    }
+    catch(std::invalid_argument) {
+        return std::string("Wrong number format!");
     }
 
     switch (operation) {
