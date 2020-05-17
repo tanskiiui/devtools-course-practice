@@ -1,5 +1,6 @@
 // Copyright 2020 Petrov Anton
 
+#include <string>
 #include <gtest/gtest.h>
 #include <vector>
 #include <algorithm>
