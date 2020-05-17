@@ -100,7 +100,7 @@ TEST(SortArrayTEST, Can_Create_Default_SortArray_Correct) {
     SortArray array;
     size_t res = 0;
 
-    // Assert
+    // Act & Assert
     EXPECT_EQ(res, array.size());
 }
 
@@ -114,7 +114,7 @@ TEST(SortArrayTEST, Can_Create_SortArray_With_Some_Size_Correct) {
     SortArray array(5);
     size_t res = 5;
 
-    // Assert
+    // Act & Assert
     EXPECT_EQ(res, array.size());
 }
 
@@ -132,7 +132,7 @@ TEST(SortArrayTEST, Can_Create_Copy_Of_SortArray_Correct_1) {
     SortArray copy(array);
     size_t res = 5;
 
-    // Assert
+    // Act & Assert
     EXPECT_EQ(res, copy.size());
 }
 
@@ -161,7 +161,7 @@ TEST(SortArrayTEST, Can_Create_SortArray_From_Vector_Correct_1) {
     SortArray a(vec);
     size_t res = 4;
 
-    // Assert
+    // Act & Assert
     EXPECT_EQ(res, a.size());
 }
 
@@ -181,7 +181,7 @@ TEST(SortArrayTEST, Can_Push_Element_In_SortArray_Without_Throws) {
     std::vector<int32_t> vec = { 3, 10, -5, 1 };
     SortArray array(vec);
 
-    // Assert
+    // Act & Assert
     ASSERT_NO_THROW(array.push(2));
 }
 
@@ -189,7 +189,7 @@ TEST(SortArrayTEST, Can_Push_Element_In_SortArray_Without_Throws_2) {
     // Arrange
     SortArray array(4);
 
-    // Assert
+    // Act & Assert
     ASSERT_NO_THROW(array.push(2));
 }
 
