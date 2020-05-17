@@ -68,7 +68,7 @@ std::string ComplexCalculator::operator()(int argc, const char** argv) {
     catch(std::string &str) {
         return str;
     }
-    catch(std::invalid_argument()) {
+    catch(std::invalid_argument) {
         return std::string("Wrong number format!");
     }
 
