@@ -1,10 +1,5 @@
 // Copyright 2020 Petrov Anton
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <string>
 #include <sstream>
 
 #include "include/Salary.h"
@@ -36,25 +31,6 @@ const char** argv) {
     return true;
 }
 
-unsigned int parseUnsignedInt(const char* arg) {
-char* end;
-unsigned int value = std::strtoul(arg, &end, 0);
-if (end[0]) {
-        throw std::string("Wrong number format!");
-    }
-
-return value;
-}
-
-float parseFloat(const char* arg) {
-    char* end;
-    float value = strtof(arg, &end);
-if (end[0]) {
-        throw std::string("Wrong number format!");
-    }
-    return value;
-}
-
 std::string SalaryCalculator::operator()(int argc, const char** argv) {
     Arguments args;
 
@@ -62,15 +38,15 @@ std::string SalaryCalculator::operator()(int argc, const char** argv) {
         return message_;
     }
     try {
-        args.h_m_hours       = parseUnsignedInt(argv[1]);
-        args.h_m_hours_over  = parseUnsignedInt(argv[2]);
-        args.h_m_hours_admin = parseUnsignedInt(argv[3]);
-        args.s_m_salary      = parseFloat(argv[4]);
+        args.h_m_hours = static_cast<unsigned int>(std::stoul(argv[1]));
+        args.h_m_hours_over = static_cast<unsigned int>(std::stoul(argv[2]));
+        args.h_m_hours_admin = static_cast<unsigned int>(std::stoul(argv[3]));
+        args.s_m_salary = std::stod(argv[4]);
     }
-    catch(std::string& str) {
-        return str;
+    catch(std::invalid_argument) {
+        return std::string("Wrong number format!");
     }
-
+    
     Salary sal;
     sal.setSalary(args.s_m_salary);
     sal.setHours(args.h_m_hours);
