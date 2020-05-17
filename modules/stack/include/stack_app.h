@@ -1,7 +1,7 @@
 // Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
-#ifndef MODULES_STACK_INCLUDE_STACK_H_
-#define MODULES_STACK_INCLUDE_STACK_H_
+#ifndef MODULES_STACK_INCLUDE_STACK_APP_H_
+#define MODULES_STACK_INCLUDE_STACK_APP_H_
 
 #include <string>
 #include "include/stack.h"
@@ -18,4 +18,4 @@ private:
     Stack stack;
 };
 
-#endif  // MODULES_STACK_INCLUDE_STACK_H_
+#endif  // MODULES_STACK_INCLUDE_STACK_APP_H_
