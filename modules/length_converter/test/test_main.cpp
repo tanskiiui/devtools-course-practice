@@ -1,5 +1,4 @@
-// Copyright 2020 Sokova Anastasia
-
+// Copyright 2020 Brazhnikov Eugene
 #include <gtest/gtest.h>
 
 int main(int argc, char** argv) {
