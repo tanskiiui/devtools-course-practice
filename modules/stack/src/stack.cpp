@@ -1,6 +1,7 @@
-// Copyright 2020 Okmyanskiy Andrey
+// Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
 #include "include/stack.h"
+#include<algorithm>
 
 Stack::Stack(int size) {
     if (size <= 0) {

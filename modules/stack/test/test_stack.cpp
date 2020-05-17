@@ -1,4 +1,4 @@
-// Copyright 2020 Okmyanskiy Andrey
+// Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
 #include <gtest/gtest.h>
 

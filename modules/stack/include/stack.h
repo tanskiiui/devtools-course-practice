@@ -1,4 +1,4 @@
-// Copyright 2020 Okmyanskiy Andrey
+// Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
 #ifndef MODULES_STACK_INCLUDE_STACK_H_
 #define MODULES_STACK_INCLUDE_STACK_H_
