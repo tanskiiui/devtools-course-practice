@@ -1,5 +1,7 @@
 // Copyright 2020 PETROV ANTON
 
+#include <string>
+
 #include "include/Salary_calculator.h"
 
 int main(int argc, const char** argv) {
