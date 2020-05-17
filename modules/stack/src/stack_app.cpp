@@ -23,8 +23,8 @@ bool StackApp::validateNumberOfArguments(int argc, const char** argv) {
     if (argc == 1) {
         help(argv[0]);
         return false;
-    }
-    else if (argc != 2) {
+    } else {
+        if (argc != 2) {
         help(argv[0], "ERROR: Should be 1 argument.\n\n");
         return false;
     }
