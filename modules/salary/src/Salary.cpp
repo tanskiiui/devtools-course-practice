@@ -1,8 +1,6 @@
 // Copyright 2020 Savin Dmitry
 #include "include/Salary.h"
 
-#include <string>
-
 Salary::Salary() {
     m_salary = 0;
     m_hours = 0;

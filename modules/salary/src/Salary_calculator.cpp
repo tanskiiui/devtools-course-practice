@@ -1,7 +1,6 @@
 // Copyright 2020 Petrov Anton
 
 #include <sstream>
-#include <string>
 
 #include "include/Salary.h"
 #include "include/Salary_calculator.h"
