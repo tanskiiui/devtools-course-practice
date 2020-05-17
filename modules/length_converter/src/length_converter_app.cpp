@@ -3,11 +3,9 @@
 #include "include/length_converter.h"
 #include "include/length_converter_app.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <string.h>
-#include <string>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <sstream>
 
 void LengthCalculator::Help(const char* appname, const char* message) {
