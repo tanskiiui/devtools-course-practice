@@ -44,7 +44,7 @@ std::string SalaryCalculator::operator()(int argc, const char** argv) {
         args.h_m_hours_admin = static_cast<unsigned int>(std::stoul(argv[3]));
         args.s_m_salary = std::stod(argv[4]);
     }
-    catch (const std::invalid_argument& error) {
+    catch (const std::invalid_argument(error)) {
         return std::string("Wrong number format!");
     }
 
