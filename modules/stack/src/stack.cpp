@@ -1,7 +1,6 @@
 // Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
 #include "include/stack.h"
-#include<algorithm>
 
 Stack::Stack(int size) {
     if (size <= 0) {
@@ -20,7 +19,7 @@ void Stack::init(const Stack& stack, bool equal) {
     }
     this->top = stack.top;
     for (int i = 0; i < top; i++) {
-        this->mas[i] = stack.src[i];
+        this->mas[i] = stack.mas[i];
     }
 }
 
