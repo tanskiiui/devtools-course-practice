@@ -61,7 +61,7 @@ void Stack::operator = (const Stack& stack) {
     if (*this != stack) {
         bool equal = false;
         if (this->size != stack.size) {
-            delete[] this->mas;      
+            delete[] this->mas;
         } else {
             equal = true;
         }
