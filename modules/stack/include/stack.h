@@ -10,6 +10,7 @@ class Stack {
     double *mas;
     int size;
     int top;
+    void init(const Stack& stack, bool equal)
  public:
     explicit Stack(int size = sizeDefault);
     Stack(const Stack& stack);
