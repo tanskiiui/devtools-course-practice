@@ -58,7 +58,6 @@ std::string StackApp::operator()(int argc, const char** argv) {
         return message_;
     }
     std::ostringstream result;
-    std::ostringstream resultMin;
     Stack stack;
 
     try {
