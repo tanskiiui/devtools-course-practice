@@ -1,5 +1,6 @@
 // Copyright 2020 Okmyanskiy Andrey & Tanskii Yurii
 
+#include "include/stack.h"
 #include "include/stack_app.h"
 #include <vector>
 #include <string>
