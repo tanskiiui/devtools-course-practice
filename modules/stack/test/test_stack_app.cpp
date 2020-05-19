@@ -14,15 +14,12 @@ class StackAppTest : public ::testing::Test {
  protected:
     void Act(vector<string> args_) {
         vector<const char*> options;
-
         options.push_back("appname");
         for (size_t i = 0; i < args_.size(); ++i) {
             options.push_back(args_[i].c_str());
         }
-
         const char** argv = &options.front();
         int argc = static_cast<int>(args_.size()) + 1;
-
         output_ = app_(argc, argv);
     }
 
